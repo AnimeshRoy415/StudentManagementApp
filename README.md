@@ -55,10 +55,6 @@ To login as a user:
 
 http://localhost:8088/login
 
-To add new student
-
-http://localhost:8088/
-
 To get Student
 
 http://localhost:8088/{studentId}
