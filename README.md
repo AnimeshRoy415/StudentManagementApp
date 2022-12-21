@@ -6,7 +6,7 @@ This project is based on Student management App using Java, Spring, SpringBoot, 
 
 
 
-Tech Stacks & Tools Used
+#Tech Stacks & Tools Used
 Tech Stacks:
 
 Java
@@ -27,17 +27,20 @@ Swagger
 
 Postman
 
-Classes under the Model package
+#Classes under the Model package
 Address.java
+
+AdminUser.java
 
 User.java
 
-Customer.java
+Student.java
 
-MyOrder.java
+Course.java
 
-Products.java
+GengerEnum
 
-CategoryEnum
+AddressTypeEnum
 
-Cart.java
+
+#Some Endpoints to access the functionalities
