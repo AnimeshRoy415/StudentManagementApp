@@ -44,3 +44,21 @@ AddressTypeEnum
 
 
 <h1>Some Endpoints to access the functionalities</h1>
+
+Link to Swagger: http://localhost:8088/swagger-ui/index.html#/
+
+To register as a user:
+
+http://localhost:8088/regisrtration
+
+To login as a user:
+
+http://localhost:8088/login
+
+To add new student
+
+http://localhost:8088/
+
+To get Student
+
+http://localhost:8088/{studentId}
