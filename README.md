@@ -6,8 +6,8 @@ This project is based on Student management App using Java, Spring, SpringBoot, 
 
 
 
-#Tech Stacks & Tools Used
-Tech Stacks:
+<h1>Tech Stacks & Tools Used</h1>
+<h3>Tech Stacks:</h3>
 
 Java
 
@@ -19,7 +19,7 @@ SpringBoot
 
 Hibernate
 
-Tools:
+<h3>Tools:</h3>
 
 Spring Tool Suite
 
@@ -27,7 +27,7 @@ Swagger
 
 Postman
 
-#Classes under the Model package
+<h1>Classes under the Model package</h1>
 Address.java
 
 AdminUser.java
@@ -43,4 +43,4 @@ GengerEnum
 AddressTypeEnum
 
 
-#Some Endpoints to access the functionalities
+<h1>Some Endpoints to access the functionalities</h1>
