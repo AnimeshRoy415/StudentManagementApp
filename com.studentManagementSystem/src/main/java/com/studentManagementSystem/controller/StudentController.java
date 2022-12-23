@@ -76,11 +76,18 @@ public class StudentController {
 	}
 	
 	
+	
+	
+	@PutMapping("asigncourse/{studentId}/{courseName}")
+	public Student asignCourseToStudent(@PathVariable Integer studentId, String courseName) {
+		
+		return sService.addCourseToTheStudent(studentId, courseName);
+		
+	}
+	
 	@DeleteMapping("/courses/{courseName}/{studentId}")
 	public Student removeCourseFromStudent( @PathVariable String courseName,Integer studentId) {
 		return sService.deleteCourseFromStudent(courseName, studentId);
-	}
-	
-	
+		}
 
 }

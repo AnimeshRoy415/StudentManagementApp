@@ -186,39 +186,63 @@ public class StudentServiceImpl implements StudentService {
 		else  throw new CustomerNotFoundException("invalid credetial...!!!");
 	}
 
-	
+
+
 	@Override
-	public Student deleteCourseFromStudent(String courseName,Integer studentId) {
+	public Student addCourseToTheStudent(Integer studentId, String courseName) {
 		
+		Optional<Student> optStudent= sDao.findById(studentId);
 		Course course= cDao.findByCourseName(courseName);
 		
-		Optional<Student>optStudent= sDao.findById(studentId);
-		
-		if(course!=null && optStudent.isPresent()){
+		if(optStudent.isPresent() && course != null) {
 			
-			Student student= optStudent.get();			
-				
+			Student student= optStudent.get();
 			List<Course> courses= student.getCourses();
 			
-			if(courses.size()>0) {
-				
-				for(Course c: courses) {
-					if(course.equals(c)){
-						 cDao.delete(course);
-						sDao.save(student);
-						return student;
-					}
-					else throw new CustomerNotFoundException("you are not asigned to this course...!!!");
-				}
-			}
+			courses.add(course);
 			
-			else throw new CustomerNotFoundException("you are not asigned to this course...!!!");
+			List<Student> students= course.getStudents();
+			
+			students.add(student);
+			
+			sDao.save(student);
+			
+			return sDao.save(student);
 			
 		}
-		else throw new CustomerNotFoundException("please enter valid details...!!!");
+		
+		else throw new CustomerNotFoundException("Invalid Credential...!!!");
 		
 		
-		throw new CustomerNotFoundException("please enter valid credential...!!!");
+	}
+
+	@Override
+	public Student deleteCourseFromStudent(String courseName, Integer studentId) {
+		// TODO Auto-generated method stub
+		
+		Optional<Student> optStudent= sDao.findById(studentId);
+		Course course= cDao.findByCourseName(courseName);
+		
+		if(optStudent.isPresent() && course != null) {
+			
+			Student student= optStudent.get();
+			List<Course> courses= student.getCourses();
+			
+			courses.remove(course);
+			course.getStudents().remove(student);
+			
+			sDao.save(student);
+			cDao.save(course);
+			
+			
+			return sDao.save(student);
+			
+		}
+		
+		
+		
+		
+		else throw new CustomerNotFoundException("Invalid Credential...!!!");
 	}
 	
 

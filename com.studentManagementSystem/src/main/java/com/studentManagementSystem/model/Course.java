@@ -45,7 +45,7 @@ public class Course {
 	private String courseTopic;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JsonIgnore
+//	@JsonIgnore
 	private List<Student> students= new ArrayList<>();
 	
 }

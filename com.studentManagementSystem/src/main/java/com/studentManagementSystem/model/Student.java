@@ -72,7 +72,7 @@ public class Student {
 	private List<Address> addresslist= new ArrayList<>();
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-//	@JsonIgnore
+	@JsonIgnore
 	private List<Course> courses= new ArrayList<>();
 	
 

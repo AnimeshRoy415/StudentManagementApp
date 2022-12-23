@@ -28,4 +28,6 @@ public interface StudentService {
 	
 	public Student deleteCourseFromStudent(String courseName,Integer studentId);
 
+	
+	public Student addCourseToTheStudent(Integer studentId, String courseName);
 }
