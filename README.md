@@ -40,7 +40,7 @@ Student.java
 
 Course.java
 
-GengerEnum
+GenderEnum
 
 AddressTypeEnum
 
