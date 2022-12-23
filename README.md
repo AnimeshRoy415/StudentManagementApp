@@ -65,7 +65,7 @@ To get Student
 
 http://localhost:8088/{studentId}
 
-To add COurse
+To add Course
 
 http://localhost:8088/
 
