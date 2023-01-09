@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public Student addCourseToStudent(Integer courseId, Integer studentId) {
+	public String addCourseToStudent(Integer courseId, Integer studentId) {
 		
 		Optional<Course> getCourse= cDao.findById(courseId);
 		Optional<Student> getStudent= sDao.findById(studentId);
@@ -53,12 +53,12 @@ public class CourseServiceImpl implements CourseService {
 			Student student= getStudent.get();
 			student.getCourses().add(course);
 			sDao.save(student);
-			
+			return getCourse.get().getCourseName() + " added successfully to "+studentId;
 		}
 		
+		else throw new UserAlreadyExists("Invalid Credential..!!!");
 		
-		Optional<Student> optStudent= sDao.findById(studentId);
-		return optStudent.get();
+		
 	}
 
 }

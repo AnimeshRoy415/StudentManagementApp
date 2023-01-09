@@ -31,8 +31,8 @@ public class CourseController {
 	}
 	
 	
-	@PutMapping("/addcorse/{courseId}/{studentId}")
-	public Student addCourseToStudent(@PathVariable Integer courseId,@PathVariable Integer studentId) {
+	@PutMapping("/asigncorse/student/{courseId}/{studentId}")
+	public String addCourseToStudent(@PathVariable Integer courseId,@PathVariable Integer studentId) {
 		
 		return courseService.addCourseToStudent(courseId, studentId);
 		

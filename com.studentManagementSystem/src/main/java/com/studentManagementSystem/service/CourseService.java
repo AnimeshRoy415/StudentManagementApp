@@ -7,7 +7,7 @@ public interface CourseService {
 	
 	public Course addCourse(Course course);
 	
-	public Student addCourseToStudent(Integer courseId, Integer studentId);
+	public String addCourseToStudent(Integer courseId, Integer studentId);
 	
 
 }

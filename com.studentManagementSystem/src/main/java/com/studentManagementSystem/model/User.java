@@ -32,6 +32,10 @@ public class User {
 	@NotNull(message = "Please type your password")
 	private String password;
 	
+//	@NotNull(message = "Please Enter Your Date of Birth(MM/DD/YYYY)")
+//	@Pattern(regexp = "^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$",message = "Input a valid date of birth")
+//	private String date_of_Birth;
+
 	
 
 }

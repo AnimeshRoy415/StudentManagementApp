@@ -49,16 +49,11 @@ public class StudentServiceImpl implements StudentService {
 		
 		String mobile= student.getMobileNumber();
 		
-			User user=  userDao.findByMobile(mobile);
+//			User user=  userDao.findByMobile(mobile);
 			Student customerIspresent = sDao.findByMobileNumber(student.getMobileNumber());
 			if(customerIspresent!=null) throw new UserAlreadyExists("already present with this mobile number");
-			if(user!=null) {
-				Integer user_Id= user.getUserId();
-				
-				String currentUserId= userSessionDao.findByUserId(user_Id);
-				if(currentUserId!=null) {
-					Integer id= Integer.parseInt(currentUserId);				
-					System.out.println(id);
+			else
+				{
 					if(addresses.size()!=0) {				
 						for(Address address:addresses) {				
 								aDao.save(address);
@@ -67,13 +62,8 @@ public class StudentServiceImpl implements StudentService {
 					}				
 					return sDao.save(student);	
 				}
-				else {
-					throw new CustomerNotFoundException("Please login");
-				}	
+					
 			}
-			else
-				throw new CustomerNotFoundException("Please login");
-	}
 
 	@Override
 	public Student updateStudent(Student student) {
@@ -165,7 +155,7 @@ public class StudentServiceImpl implements StudentService {
 			return studentsList;
 		}
 		
-		else throw new CustomerNotFoundException("No Student present with this name "+name);
+		else throw new CustomerNotFoundException("No Student present with this name "+ name);
 	}
 	
 

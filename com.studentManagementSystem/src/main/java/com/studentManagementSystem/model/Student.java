@@ -61,12 +61,12 @@ public class Student {
 	private String mobileNumber;
 	
 	@NotNull(message = "please input a valid name")
-	@Pattern(regexp = "(?i)(^[a-z]+)[a-z .,-]((?! .,-)$){1,25}$",message = "please input a valid name")
-	private String parentFirstName;
+//	@Pattern(regexp = "(?i)(^[a-z]+)[a-z .,-]((?! .,-)$){1,25}$",message = "please input a valid name")
+	private String parentName;
 	
-	@NotNull(message = "please input a valid name")
-	@Pattern(regexp = "(?i)(^[a-z]+)[a-z .,-]((?! .,-)$){1,25}$",message = "please input a valid name")
-	private String parentLastName;
+//	@NotNull(message = "please input a valid name")
+//	@Pattern(regexp = "(?i)(^[a-z]+)[a-z .,-]((?! .,-)$){1,25}$",message = "please input a valid name")
+//	private String parentLastName;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Address> addresslist= new ArrayList<>();
